@@ -3,7 +3,7 @@ from matplotlib import pyplot as plt
 
 if __name__ == '__main__':
     # np.set_printoptions(threshold=np.inf)
-    test = np.load("testDic/26_IM-0003-0002.png.npy")
+    test = np.load("testDic/279_IM-0004-0001.png.npy")
     # temp = np.zeros(test.shape)
     # groundTruth = 0
     # if groundTruth == 0:
