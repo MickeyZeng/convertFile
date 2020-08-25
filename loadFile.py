@@ -152,14 +152,39 @@ def main2():
         np.save(result_folder + "/" + patientId + "/" + newName, content)
 
 
-#
+# 读numpy
 def main3():
-    testPath = "testScribble/9/IM-0001-0002.npy"
+    testPath = "/Users/mickey/Downloads/10293.npy"
     testContent = np.load(testPath)
     print(testContent.shape)
+
+
+# 读CSV 看标少哪一张图片
+def main4():
+    master = pd.read_csv("/Users/mickey/Downloads/yes_csv.csv")
+
+    test = master.to_dict()
+    resultList = []
+    flag = True
+
+    files = os.listdir("/Users/mickey/Downloads/scribble#CIFAR10")
+
+    for i in test['image_path']:
+        for file in files:
+            if test['image_path'][i].split('.')[0] == file.split(".")[0]:
+                flag = False
+                continue
+
+        if flag is True:
+            print(test['image_path'][i])
+            resultList.append(i)
+
+        flag = True
+
+    print(resultList)
 
 
 #
 if __name__ == '__main__':
     # print('hello')
-    main3()
+    main4()
